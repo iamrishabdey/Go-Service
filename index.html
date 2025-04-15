@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>GO Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel=stylesheet>
+<style>nav,nav h1{display:flex}nav a,nav h1{font-weight:500;color:#fff}.hamburger,.next,.prev,button{cursor:pointer}.product:hover,.review:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.2)}header{box-shadow:0 2px 10px rgba(0,0,0,.1)}nav{background-color:rgba(17,44,74,.9);padding:15px;align-items:center;position:sticky;top:0;z-index:1000;transition:background-color .3s;font-family:Roboto,sans-serif}nav:hover{background-color:#112c4a}nav h1{margin:0;font-size:1.5em;flex-grow:1;align-items:center}nav img{width:40px;height:25px;margin-right:10px}nav a{text-decoration:none;margin-left:20px;transition:color .3s}nav a:hover{color:gold}.hamburger{display:none;font-size:24px;background:0 0;border:none;color:#fff;margin-left:auto}.nav-links{display:flex}.nav-links a{display:block}.slideshow-container{position:relative;max-width:100%;margin:auto auto 20px;overflow:hidden;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.1)}.slide{display:none;width:100%;height:500px}.slide img{width:100%;height:100%;object-fit:cover;border-radius:10px;transition:transform .5s}.next,.prev{position:absolute;top:50%;width:auto;padding:16px;color:#fff;font-weight:700;font-size:18px;transition:.6s;border-radius:3px;background-color:rgba(0,0,0,.5)}.product,.review{margin:1em;box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .2s ease-in-out,box-shadow .2s ease-in-out;text-align:center}.next{right:0}.next:hover,.prev:hover{background-color:rgba(0,0,0,.8)}main{display:flex;flex-wrap:wrap;justify-content:center;padding:2em}main h2{text-align:center;width:100%;color:#0e396a}.product{background:linear-gradient(145deg,#fff,#e6e6e6);border-radius:10px;padding:1.5em;width:300px;display:flex;flex-direction:column;align-items:center}.product:hover{background:linear-gradient(145deg,#e6e6e6,#fff)}.product img{width:80%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:1em;transition:transform .3s}.product img:hover{transform:scale(1.1)}.product h2{margin:.5em 0;font-weight:700;color:#4a90e2}.product p{font-size:14px;color:#666;padding:0 1em;margin-bottom:1em}button{background-color:#4a90e2;color:#fff;border:none;padding:10px 20px;font-size:16px;border-radius:5px;transition:background-color .2s ease-in-out,transform .2s ease-in-out}button:hover{background-color:#357abd;transform:translateY(-2px)}.reviews-container{display:flex;flex-wrap:wrap;justify-content:space-evenly;padding:2em;text-align:center;background-color:#f6e1e1}.reviews-header{width:100%;margin-bottom:1em;color:#01060c}.review{background-color:#0e396a;border-radius:10px;padding:1.5em;width:300px}.review p{color:#fff;font-size:1.8em;margin:0}.review img{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:.5em;border:2px solid #4a90e2}footer{background-color:#000;color:#fff;text-align:center;padding:1em 0;position:relative;bottom:0;width:100%}footer p{margin:0;color:#f5f5f5}hr{border:0;height:2px;background:linear-gradient(to right,#4a90e2,#e6e6e6,#4a90e2);margin:2em 0}@media (max-width:768px){.product,.review{width:90%}nav h1{font-size:1.5em}.nav-links{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background-color:rgba(17,44,74,.9);z-index:1000}.nav-links.active{display:flex}.hamburger{display:block}}@media (max-width:480px){nav h1{font-size:1.2em}.product{padding:1em}.product img{height:120px}}</style>
+</head>
+<body>
+<nav>
+<h1><img src=images/logo1.webp alt=Logo1><a href=index.html>GO SERVICES</a></h1>
+<div class=nav-links>
+<a href=index.html>HOME</a>
+<a href=about.html>ABOUT</a>
+<a href=#services>SERVICES</a>
+<a href=#reviews>REVIEWS</a>
+<a href=contact.html>CONTACT</a>
+</div>
+<button class=hamburger aria-label="Toggle navigation" onclick=toggleNav()>
+&#9776;
+</button>
+</nav>
+<div class=slideshow-container>
+<div class=slide>
+<img src=images/logo.webp alt=Logo>
+</div>
+<div class=slide>
+<img src=images/homecleaning.webp alt="Service Image 1">
+</div>
+<div class=slide>
+<img src=images/carservice.webp alt="Service Image 2">
+</div>
+<div class=slide>
+<img src=images/washingmachine.webp alt="Service Image 3">
+</div>
+<a class=prev onclick=changeSlide(-1)>&#10094;</a>
+<a class=next onclick=changeSlide(1)>&#10095;</a>
+</div>
+<main id=services>
+<h2>Our Services</h2>
+<div class=product>
+<img src=images/ac.png alt="Air Condition Service" loading=lazy>
+<h2>Air Condition Service</h2>
+<p>Maintenance and repair of your air conditioning unit by expert technicians.</p>
+<button aria-label="Book Air Condition Service" onclick='bookService("Air Condition Service")'>Book Now</button>
+</div>
+<div class=product>
+<img src=images/washingmaching.png alt="Washing Machine Service" loading=lazy>
+<h2>Washing Machine Service</h2>
+<p>Cleaning, maintenance, and repair by our skilled technicians.</p>
+<button aria-label="Book Washing Machine Service" onclick='bookService("Washing Machine Service")'>Book Now</button>
+</div>
+<div class=product>
+<img src=images/car.png alt="Car Service" loading=lazy>
+<h2>Car Service</h2>
+<p>Oil change, tire rotation, and maintenance tasks to keep your car running smoothly.</p>
+<button aria-label="Book Car Service" onclick='bookService("Car Service")'>Book Now</button>
+</div>
+<div class=product>
+<img src=images/cleaning.png alt="Home Cleaning" loading=lazy>
+<h2>Home Cleaning</h2>
+<p>Dusting, vacuuming, and cleaning tasks to keep your home clean and hygienic.</p>
+<button aria-label="Book Home Cleaning" onclick='bookService("Home Cleaning")'>Book Now</button>
+</div>
+<div class=product>
+<img src=images/cooking.jpg alt="Cooking Services" loading=lazy>
+<h2>Cooking Services</h2>
+<p>Delicious meals prepared by our expert chefs in your home.</p>
+<button aria-label="Book Cooking Services" onclick='bookService("Cooking Services")'>Book Now</button>
+</div>
+<div class=product>
+<img src=images/bike.jpg alt="Bike Services" loading=lazy>
+<h2>Bike Services</h2>
+<p>Comprehensive maintenance and repair services for your bike.</p>
+<button aria-label="Book Bike Services" onclick='bookService("Bike Services")'>Book Now</button>
+</div>
+<hr>
+</main>
+<div class=reviews-container id=reviews>
+<h2 class=reviews-header>Customer Reviews</h2>
+<div class=review>
+<img src=images/customer1.webp alt="Customer 1">
+<p>"Great service! Highly recommended!"</p>
+</div>
+<div class=review>
+<img src=images/customer2.webp alt="Customer 2">
+<p>"Professional and efficient. Will use again!"</p>
+</div>
+<div class=review>
+<img src=images/customer3.webp alt="Customer 3">
+<p>"Fantastic experience from start to finish!"</p>
+</div>
+<div class=review>
+<img src=images/customer4.webp alt="Customer 4">
+<p>"Very satisfied with the quality of work!"</p>
+</div>
+<div class=review>
+<img src=images/customer5.webp alt="Customer 5">
+<p>"Friendly staff and great results!"</p>
+</div>
+<div class=review>
+<img src=images/customer6.webp alt="Customer 6">
+<p>"I will definitely recommend GO Services!"</p>
+</div>
+</div>
+<footer>
+<p>&copy; 2025 GO Services. All Rights Reserved to Rishab Dey.</p>
+</footer>
+<script>let slideIndex=0;function showSlides(){let e=document.getElementsByClassName("slide");for(let l=0;l<e.length;l++)e[l].style.display="none";slideIndex++,slideIndex>e.length&&(slideIndex=1),e[slideIndex-1].style.display="block",setTimeout(showSlides,5e3)}function changeSlide(e){slideIndex+=e;let l=document.getElementsByClassName("slide");slideIndex>l.length&&(slideIndex=1),slideIndex<1&&(slideIndex=l.length),showSlidesManually()}function showSlidesManually(){let e=document.getElementsByClassName("slide");for(let l=0;l<e.length;l++)e[l].style.display="none";e[slideIndex-1].style.display="block"}function bookService(e){alert(`Booking ${e} confirmed!`)}function toggleNav(){document.querySelector(".nav-links").classList.toggle("active")}showSlides()</script>
+</body>
+</html>
